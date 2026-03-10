@@ -9,13 +9,17 @@
   <body>
     <div>
         <div class="header">
-            <h1>My Store</h1>
+            <h1>My Store - Admin Panel</h1>
             <ul>
                 <li><a href="/">Home</a></li>
+                <% if (user) { %>
                 <li><a href="/products">Products</a></li>
-                <li>Users</li>
-                <li>Login</li>
-                <li>Logout</li>
+                <li><a href="/users">Users</a></li>
+                 <li><a href="/auth/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
+               
             </ul>
         </div>
         <div><%- body %></div>
